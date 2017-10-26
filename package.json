@@ -1,6 +1,6 @@
 {
-	"name" : "json-view",
-	"version" : "0.4.0",
+	"name" : "object-json-tree",
+	"version" : "1.0.0",
 	"files" : [
 		"JSONView.js",
 		"devtools.css",
@@ -8,12 +8,15 @@
 	],
 	"main" : "JSONView.js",
 
-	"author" : "Richard Livingston <richard.npm@logoapps.com>",
+	"author" : [
+		"Richard Livingston <richard.npm@logoapps.com>", 
+		"maxushuang@yeah.net"
+	],
+
 	"repository" : {
 		"type" : "git",
-		"url" : "https://github.com/richard-livingston/json-view.git"
+		"url" : "https://github.com/maxushuang/object-json-tree.git"
 	},
-	"homepage" : "https://richard-livingston.github.io/json-view/",
 
 	"publishConfig" : {
 		"registry" : "https://registry.npmjs.org/"
