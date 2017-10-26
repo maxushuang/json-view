@@ -32,9 +32,7 @@ function JSONView(name_, value_){
 		name : document.createElement('div'),
 		separator : document.createElement('div'),
 		value : document.createElement('div'),
-		delete : document.createElement('div'),
-		children : document.createElement('div'),
-		insert : document.createElement('div')
+		children : document.createElement('div')
 	};
 
 
@@ -71,30 +69,6 @@ function JSONView(name_, value_){
 			enumerable : true
 		},
 
-		nameEditable : {
-			get : function(){
-				return nameEditable;
-			},
-
-			set : function(value){
-				nameEditable = !!value;
-			},
-
-			enumerable : true
-		},
-
-		valueEditable : {
-			get : function(){
-				return valueEditable;
-			},
-
-			set : function(value){
-				valueEditable = !!value;
-			},
-
-			enumerable : true
-		},
-
 		refresh : {
 			value : refresh,
 			enumerable : true
@@ -112,16 +86,6 @@ function JSONView(name_, value_){
 
 		destroy : {
 			value : destroy,
-			enumerable : true
-		},
-
-		editName : {
-			value : editField.bind(null, 'name'),
-			enumerable : true
-		},
-
-		editValue : {
-			value : editField.bind(null, 'value'),
 			enumerable : true
 		}
 
@@ -144,20 +108,6 @@ function JSONView(name_, value_){
 	addDomEventListener(dom.collapseExpand, 'click', onCollapseExpandClick);
 	addDomEventListener(dom.value, 'click', expand.bind(null, false));
 	addDomEventListener(dom.name, 'click', expand.bind(null, false));
-
-	addDomEventListener(dom.name, 'dblclick', editField.bind(null, 'name'));
-	addDomEventListener(dom.name, 'blur', editFieldStop.bind(null, 'name'));
-	addDomEventListener(dom.name, 'keypress', editFieldKeyPressed.bind(null, 'name'));
-	addDomEventListener(dom.name, 'keydown', editFieldTabPressed.bind(null, 'name'));
-
-	addDomEventListener(dom.value, 'dblclick', editField.bind(null, 'value'));
-	addDomEventListener(dom.value, 'blur', editFieldStop.bind(null, 'value'));
-	addDomEventListener(dom.value, 'keypress', editFieldKeyPressed.bind(null, 'value'));
-	addDomEventListener(dom.value, 'keydown', editFieldTabPressed.bind(null, 'value'));
-	addDomEventListener(dom.value, 'keydown', numericValueKeyDown);
-
-	addDomEventListener(dom.insert, 'click', onInsertClick);
-	addDomEventListener(dom.delete, 'click', onDeleteClick);
 
 	setName(name_);
 	setValue(value_);
@@ -435,7 +385,7 @@ function JSONView(name_, value_){
 
 
 	function editFieldTabPressed(field, e){
-		if(e.key == 'Tab'){
+		if (e.key == 'Tab') {
 			editFieldStop(field);
 
 			if(field == 'name'){
