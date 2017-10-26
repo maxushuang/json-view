@@ -9,7 +9,7 @@ A simple JSON viewer with basic edit capabilities. It has styles similar to Chro
 
 *index.js*
 ```js
-var JSONView = require('json-view');
+var JSONView = require('object-json-tree');
 
 var view = new JSONView('example', {
     hello : 'world',
